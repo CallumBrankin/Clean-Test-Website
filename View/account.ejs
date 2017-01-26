@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<title></title>
+	</head>
+	<body>
+		<% if (!user) { %>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">NodeJS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="/">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                  <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+              </div>
+            </nav>
+        <% } else { %>
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="/">NodeJS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li class="active"><a href="/account">Account</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/logout"><span class="glyphicon glyphicon-user"></span> Log Out</a></li>
+                </ul>
+              </div>
+        <% } %>
+
+        <div class="jumbotron text-center">
+                <h1>Account</h1>
+                <p>Your Account</p>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <form action="demo_form.asp">
+                            <% if (user.email === "Unavailable") { %>
+                            <h2>Email:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Email: <%= user.email %></h2>
+                            <% } %>
+
+                            <% if (user.id === "Unavailable") { %>
+                            <h2>ID:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>ID: <%= user.id %></h2>
+                            <% } %>
+
+                            <% if (user.firstName === "Unavailable") { %>
+                            <h2>First Name:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>First Name: <%= user.firstName %></h2>
+                            <% } %>
+                         
+                            <% if (user.lastName === "Unavailable") { %>
+                            <h2>Last Name:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Last Name: <%= user.lastName %></h2>
+                            <% } %>
+
+                            <% if (user.address === "Unavailable") { %>
+                            <h2>Street Address :<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Street Address : <%= user.street_address %></h2>
+                            <% } %>
+
+                            <% if (user.locality === "Unavailable") { %>
+                            <h2>Town/City: <input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Town/City: <%= user.locality %></h2>
+                            <% } %>
+
+                            <% if (user.region === "Unavailable") { %>
+                            <h2>Region:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Region: <%= user.region %></h2>
+                            <% } %>
+
+                            <% if (user.postal_code === "Unavailable") { %>
+                            <h2>Post/Zip code:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Post/Zip code: <%= user.postal_code %></h2>
+                            <% } %>
+
+                            <% if (user.country === "Unavailable") { %>
+                            <h2>Country:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Country: <%= user.country %></h2>
+                            <% } %>
+                            
+                            <% if (user.dob === "Unavailable") { %>
+                            <h2>DOB:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>DOB: <%= user.dob %></h2>
+                            <% } %>
+                            
+                            <% if (user.gender === "Unavailable") { %>
+                            <h2>Gender:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Gender: <%= user.gender %></h2>
+                            <% } %>
+                            
+                            <% if (user.phone === "Unavailable") { %>
+                            <h2>Phone:<input type="text" name="fname"><br></h2>
+                            <% } else { %>
+                            <h2>Phone: <%= user.phone %></h2>
+                            <% } %>
+
+                            <input type="" value="Submit - Not Functional">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            
+	</body>
+</html>
